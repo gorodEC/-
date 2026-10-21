@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Последние новости России: политика, экономика, спорт и технологии.">
+  <title>Новости.ру — главные события</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#" aria-label="Новости.ру — на главную"><span class="logo-mark">Н</span><span>Новости<span class="logo-dot">.ру</span></span></a>
+    <nav class="nav" aria-label="Фильтр новостей">
+      <button class="filter active" data-category="all" aria-pressed="true">Все новости</button>
+      <button class="filter" data-category="politics" aria-pressed="false">Политика</button>
+      <button class="filter" data-category="sports" aria-pressed="false">Спорт</button>
+      <button class="filter" data-category="economy" aria-pressed="false">Экономика</button>
+      <button class="filter" data-category="technology" aria-pressed="false">Технологии</button>
+    </nav>
+    <div class="header-status"><span class="status-dot"></span><span id="updatedAt">Загрузка новостей…</span></div>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="eyebrow"><span class="live-dot"></span> НОВОСТНАЯ ЛЕНТА</div>
+      <h1>Главное <span>сегодня</span></h1>
+      <p>Важные события России — коротко и по делу.</p>
+    </section>
+
+    <div id="notice" class="notice" role="status" aria-live="polite">Подключаемся к новостным источникам…</div>
+
+    <section id="hero" class="hero" hidden aria-label="Главная новость">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <span id="hero-category" class="category-label">Главное</span>
+        <h2 id="hero-title"></h2>
+        <p id="hero-summary"></p>
+        <a id="hero-link" class="primary-button" href="#" target="_blank" rel="noopener noreferrer">Читать новость <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section class="section-head">
+      <div><p class="eyebrow">СВЕЖАЯ ЛЕНТА</p><h2 id="feedHeading">Последние новости</h2></div>
+      <span id="resultCount" class="result-count"></span>
+    </section>
+    <section id="newsGrid" class="news-grid" aria-live="polite" aria-busy="true"></section>
+    <div class="load-row"><button id="retryButton" class="secondary-button" type="button">Обновить новости</button></div>
+  </main>
+  <footer><span class="logo-mark small">Н</span><span>Новости.ру</span><span class="footer-note">Материалы принадлежат их первоисточникам.</span></footer>
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
